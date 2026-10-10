@@ -9,13 +9,18 @@
     <meta name="theme-color" content="#eee2ff" />
     <title>Shardswing</title>
     <link rel="icon" href="data:," />
+    <!-- touch (2026-10-10): a tiny splash until the first game frame (app.ts removes #splash), so a slow
+         line shows the game's name and a pulsing core instead of a blank page. Kept compact (under 1 KB). -->
+    <!-- prettier-ignore -->
+    <style>#splash{z-index:30;color:#2a2140;letter-spacing:.06em;text-shadow:2px 3px #ff5fa2;pointer-events:none;background:#eee2ff;flex-direction:column;justify-content:center;align-items:center;gap:24px;font:900 30px/1 ui-rounded,Segoe UI,system-ui,-apple-system,BlinkMacSystemFont,Roboto,Noto Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;display:flex;position:fixed;top:0;bottom:0;left:0;right:0}#splash i{background:#ffd23f;border:4px solid #2a2140;border-radius:50%;width:44px;height:44px;animation:.7s ease-in-out infinite alternate sp;box-shadow:3px 4px #2a2140}@keyframes sp{to{transform:scale(1.25)}}@media (prefers-reduced-motion:reduce){#splash i{animation:none}}</style>
     <!-- CrazyGames SDK v3, loaded in <head> as https://docs.crazygames.com/sdk/intro/ requires.
          The game runs without it (offline, other domains): see src/game/platform.ts. -->
     <script src="https://sdk.crazygames.com/crazygames-sdk-v3.js"></script>
-    <script type="module" crossorigin src="./assets/index-BggY-0dU.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CiS8I15a.css">
+    <script type="module" crossorigin src="./assets/index-CiByr6Kz.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-vKQmEgFy.css">
   </head>
   <body>
+    <div id="splash" aria-hidden="true"><i></i>SHARDSWING</div>
     <div id="app">
       <canvas id="game" aria-label="Shardswing play area"></canvas>
       <button id="btn-settings" type="button" aria-label="Settings" hidden>
